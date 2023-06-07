@@ -11,4 +11,9 @@ class pemesan extends Model
     protected $table = 'pemesan';
     protected $fillable = ['konser_id', 'nama', 'email', 'no_telepon', 'alamat'];
     protected $primaryKey = 'id';
+
+    public function cekin()
+    {
+        return $this->belongsTo(KodeKonser::class);
+    }
 }

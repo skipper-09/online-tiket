@@ -27,10 +27,17 @@ class AuthController extends Controller
 
 
         if (Auth::attempt($data)) {
+            $request->session()->regenerate();
             return redirect()->route('admin.pemesan')
                 ->withSuccess('You have Successfully loggedin');
         }
 
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return back()->withErrors('password', 'Invalid password');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('pemesan')->with('toast_success', 'Berhasil Logout');
     }
 }

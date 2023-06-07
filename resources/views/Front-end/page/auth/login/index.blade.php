@@ -26,7 +26,7 @@
                     <h4 class="mt-1 mb-5 pb-1">Selamat Datang</h4>
                   </div>
 
-                  <form action="POST" action="{{ route('autenticate.login') }}">
+                  <form method="POST" action="{{ route('autenticate') }}">
                     @csrf
                     <p>Please login to your account</p>
 

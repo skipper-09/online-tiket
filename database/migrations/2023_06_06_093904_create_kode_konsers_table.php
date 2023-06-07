@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_pemesan')->constrained('pemesan')->onUpdate('cascade')->onDelete('cascade');
             $table->string('kode');
+            $table->boolean('digunakan')->default(false);
             $table->timestamps();
         });
     }

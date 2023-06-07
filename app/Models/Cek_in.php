@@ -9,4 +9,5 @@ class cek_in extends Model
 {
     use HasFactory;
     protected $table = 'cek_in';
+    // protected $fillable = ['']
 }
